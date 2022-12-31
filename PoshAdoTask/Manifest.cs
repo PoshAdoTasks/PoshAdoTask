@@ -99,7 +99,7 @@
         [JsonPropertyName("id")]
         public TargetId Id { get; set; }
         [JsonPropertyName("version")]
-        public string Version { get; set; } = string.Empty;
+        public string? Version { get; set; }
         public Target (TargetId Id)
         {
             this.Id = Id;
@@ -117,7 +117,7 @@
         [JsonPropertyName("addressable")]
         public bool? Addressable { get; set; }
         [JsonPropertyName("packagePath")]
-        public string PackagePath { get; set; } = string.Empty;
+        public string? PackagePath { get; set; }
         public File (string Path)
         {
             Addressable = false;
@@ -134,9 +134,9 @@
         [JsonPropertyName("details")]
         public ContentDefinition Details { get; set; } = new ContentDefinition();
         [JsonPropertyName("license")]
-        public ContentDefinition License { get; set; } = new ContentDefinition();
+        public ContentDefinition? License { get; set; }
         [JsonPropertyName("pricing")]
-        public ContentDefinition Pricing { get; set; } = new ContentDefinition();
+        public ContentDefinition? Pricing { get; set; }
     }
     public partial class LinkDefinition
     {
