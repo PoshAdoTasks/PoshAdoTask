@@ -84,6 +84,10 @@
         {
             this.Files.Add(new File(Path));
         }
+        public void AddFile(File File)
+        {
+            this.Files.Add(File);
+        }
     }
     public enum ManifestCategory { AzureArtifacts, AzureBoards, AzurePipelines, AzureRepos, AzureTestPlans };
     public enum TargetId { MicrosoftTeamFoundationServer, MicrosoftTeamFoundationServerIntegration, MicrosoftVisualStudioServices, MicrosoftVisualStudioServicesCloud, MicrosoftVisualStudioServicesCloudIntegration, MicrosoftVisualStudioServicesIntegration };
@@ -124,6 +128,12 @@
         {
             Addressable = false;
             this.Path = Path;
+        }
+        public File(string Path, bool Addressable, string PackagePath)
+        {
+            this.Addressable = Addressable;
+            this.Path = Path;
+            this.PackagePath = PackagePath;
         }
     }
     public partial class ContentDefinition
