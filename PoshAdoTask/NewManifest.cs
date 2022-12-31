@@ -20,6 +20,8 @@
         public string Name { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 0)]
         public string Publisher { get; set; } = string.Empty;
+        [Parameter(Mandatory = true, Position = 0)]
+        public string Description { get; set; } = string.Empty;
         [Parameter(Mandatory = false, Position = 0)]
         public long ManifestVersion { get; set; } = 1;
         protected override void BeginProcessing()
@@ -29,8 +31,13 @@
             WriteVerbose("Version         : " + Version);
             WriteVerbose("Name            : " + Name);
             WriteVerbose("Publisher       : " + Publisher);
+            WriteVerbose("Description     : " + Description);
             WriteVerbose("ManifestVersion : " + ManifestVersion);
-            WriteObject(new Manifest(ManifestVersion, Id, Version, Name, Publisher));
+            Manifest newManifest = new(ManifestVersion, Id, Version, Name, Publisher)
+            {
+                Description = Description
+            };
+            WriteObject(newManifest);
         }
     }
 }
