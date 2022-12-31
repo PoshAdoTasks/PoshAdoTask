@@ -37,6 +37,7 @@
             if (!(string.IsNullOrEmpty(License))) { newLink.License = new LinkDefinition(License); }
             if (!(string.IsNullOrEmpty(PrivacyPolicy))) { newLink.PrivacyPolicy = new LinkDefinition(PrivacyPolicy); }
             if (!(string.IsNullOrEmpty(Support))) { newLink.Support = new LinkDefinition(Support); }
+
             WriteObject(newLink);
         }
     }

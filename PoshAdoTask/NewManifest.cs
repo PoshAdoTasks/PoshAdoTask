@@ -33,10 +33,12 @@
             WriteVerbose("Publisher       : " + Publisher);
             WriteVerbose("Description     : " + Description);
             WriteVerbose("ManifestVersion : " + ManifestVersion);
+
             Manifest newManifest = new(ManifestVersion, Id, Version, Name, Publisher)
             {
                 Description = Description
             };
+
             WriteObject(newManifest);
         }
     }
