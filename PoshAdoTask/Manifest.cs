@@ -142,6 +142,12 @@
     {
         [JsonPropertyName("uri")]
         public Uri? Uri { get; set; }
+        public LinkDefinition()
+        { }
+        public LinkDefinition(string Path)
+        {
+            Uri = new Uri(Path);
+        }
     }
     public partial class Link
     {
@@ -152,7 +158,7 @@
         [JsonPropertyName("license")]
         public LinkDefinition License { get; set; } = new LinkDefinition();
         [JsonPropertyName("privacypolicy")]
-        public LinkDefinition? Privacypolicy { get; set; }
+        public LinkDefinition? PrivacyPolicy { get; set; }
         [JsonPropertyName("support")]
         public LinkDefinition Support { get; set; } = new LinkDefinition();
     }
