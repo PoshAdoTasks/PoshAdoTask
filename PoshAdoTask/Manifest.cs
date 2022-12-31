@@ -201,6 +201,13 @@
         public List<RestrictedDefinition> RestrictedTo { get; set; } = new List<RestrictedDefinition>();
         [JsonPropertyName("properties")]
         public Dictionary<string, object> Properties { get; set; } = new Dictionary<string, object>();
+        public Contribution()
+        { }
+        public Contribution(string Id, string Type)
+        {
+            this.Id = Id;
+            this.Type = Type;
+        }
     }
     public partial class Branding
     {
