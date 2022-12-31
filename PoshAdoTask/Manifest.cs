@@ -130,6 +130,12 @@
     {
         [JsonPropertyName("path")]
         public string Path { get; set; } = string.Empty;
+        public ContentDefinition()
+        {}
+        public ContentDefinition(string Path)
+        {
+            this.Path = Path;
+        }
     }
     public partial class Content
     {
