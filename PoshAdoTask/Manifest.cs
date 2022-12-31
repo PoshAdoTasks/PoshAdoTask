@@ -148,11 +148,11 @@
         [JsonPropertyName("getstarted")]
         public LinkDefinition Getstarted { get; set; } = new LinkDefinition();
         [JsonPropertyName("learn")]
-        public LinkDefinition Learn { get; set; } = new LinkDefinition();
+        public LinkDefinition? Learn { get; set; }
         [JsonPropertyName("license")]
         public LinkDefinition License { get; set; } = new LinkDefinition();
         [JsonPropertyName("privacypolicy")]
-        public LinkDefinition Privacypolicy { get; set; } = new LinkDefinition();
+        public LinkDefinition? Privacypolicy { get; set; }
         [JsonPropertyName("support")]
         public LinkDefinition Support { get; set; } = new LinkDefinition();
     }
