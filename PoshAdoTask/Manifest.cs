@@ -118,6 +118,8 @@
         public bool? Addressable { get; set; }
         [JsonPropertyName("packagePath")]
         public string? PackagePath { get; set; }
+        public File()
+        { }
         public File (string Path)
         {
             Addressable = false;
