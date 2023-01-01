@@ -192,7 +192,7 @@
         [JsonPropertyName("id")]
         public string Id { get; set; } = string.Empty;
         [JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+        public string? Type { get; set; }
         [JsonPropertyName("description")]
         public string Description { get; set; } = string.Empty;
         [JsonPropertyName("targets")]
@@ -207,6 +207,7 @@
         {
             this.Id = Id;
             this.Type = Type;
+            Targets.Add(Type);
         }
     }
     public partial class Branding
