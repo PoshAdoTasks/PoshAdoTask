@@ -17,32 +17,34 @@
         [Parameter(Mandatory = true, Position = 1)]
         public string? Id { get; set; }
         [Parameter(Mandatory = false, Position = 2)]
-        public bool? Type { get; set; }
-        [Parameter(Mandatory = false, Position = 3)]
-        public string? PackagePath { get; set; }
+        public string? Type { get; set; } = "ms.vss-distributed-task.task";
         protected override void BeginProcessing()
         {
-            WriteVerbose("AddContribution     : Begin Processing");
-            WriteVerbose("Id        : " + Id);
-            WriteVerbose("Type : " + Type);
-            WriteVerbose("PackagePath : " + PackagePath);
+            WriteVerbose("AddContribution : Begin Processing");
+            WriteVerbose("Id              : " + Id);
+            WriteVerbose("Type            : " + Type);
         }
         protected override void ProcessRecord()
         {
-            WriteVerbose("AddFile     : Process Record");
-            if (Manifest != null && !(string.IsNullOrEmpty(Path)))
+            WriteVerbose("AddContribution : Process Record");
+            if (Manifest != null)
             {
-                Manifest.AddFile(new File
+                Contribution newContribution = new();
+                if (!(string.IsNullOrEmpty(Id)) && !(string.IsNullOrEmpty(Type)))
                 {
-                    Path = Path,
-                    Addressable = Addressable,
-                    PackagePath = PackagePath
-                });
+                    newContribution = new(Id, Type);
+                    newContribution.Properties.Add("name", Id);
+                }
+                if (Manifest.Contributions == null)
+                {
+                    Manifest.Contributions = new List<Contribution>();
+                }
+                Manifest.Contributions.Add(newContribution);
             }
         }
         protected override void EndProcessing()
         {
-            WriteVerbose("AddFile     : End Processing");
+            WriteVerbose("AddContribution : End Processing");
             WriteObject(Manifest);
         }
     }
