@@ -53,10 +53,16 @@
                     if ((SwitchParameter)MyInvocation.BoundParameters[(nameof(Remove))] && Found)
                     {
                         WriteVerbose("Remove Target");
+                        Target? delTarget = Manifest.Targets.Find(t => t.Id == TargetId);
+                        if (delTarget != null)
+                        {
+                            Manifest.Targets.Remove(delTarget);
+                        }
                     }
                 } else  if (!(Found))
                 {
                     WriteVerbose("Add Target");
+                    Manifest.Targets.Add(newTarget);
                 }
             }
         }
