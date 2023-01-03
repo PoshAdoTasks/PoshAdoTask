@@ -272,4 +272,12 @@
         [JsonPropertyName("path")]
         public string Path { get; set; } = string.Empty;
     }
+
+    public static class IEnumerableExtensions
+    {
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> items)
+        {
+            return !(items?.Any() ?? false);
+        }
+    }
 }
