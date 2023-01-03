@@ -176,6 +176,16 @@
         public Property Properties { get; set; } = new Property();
         [JsonPropertyName("options")]
         public Dictionary<string, object> Options { get; set; } = new Dictionary<string, object>();
+        public Input()
+        { }
+        public Input (string Name, TaskType Type, string Label, bool Required, string HelpMarkDown)
+        {
+            this.Name = Name;
+            this.Type = Type;
+            this.Label = Label;
+            this.Required = Required;
+            this.HelpMarkDown = HelpMarkDown;
+        }
     }
 
     public partial class Property
