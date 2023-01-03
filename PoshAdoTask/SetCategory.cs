@@ -39,6 +39,12 @@
             WriteVerbose("SetCategory    : Process Record");
             if (Manifest != null)
             {
+                // need to test if the flag is set
+                // need to decide if we're removing
+                // need to decide if we're setting
+                // can we test for -AzureArtifacts:$true -AzureArtifacts:$false
+                WriteVerbose(MyInvocation.BoundParameters.ContainsKey("AzureArtifacts").ToString());
+                WriteVerbose(MyInvocation.BoundParameters["AzureArtifacts"].ToString());
                 if (AzureArtifacts) { Manifest.Categories.Add(ManifestCategory.AzureArtifacts); }
                 if (AzureBoards) { Manifest.Categories.Add(ManifestCategory.AzureBoards); }
                 if (AzurePipelines) { Manifest.Categories.Add(ManifestCategory.AzurePipelines); }
