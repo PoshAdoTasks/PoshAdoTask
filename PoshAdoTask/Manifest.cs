@@ -109,12 +109,19 @@
     public partial class Target
     {
         [JsonPropertyName("id")]
-        public string Id { get; set; }
+        public string? Id { get; set; }
         [JsonPropertyName("version")]
         public string? Version { get; set; }
+        public Target()
+        { }
         public Target (string Id)
         {
             this.Id = Id;
+        }
+        public Target(string Id, string Version)
+        {
+            this.Id = Id;
+            this.Version = Version;
         }
     }
     public partial class Icon
