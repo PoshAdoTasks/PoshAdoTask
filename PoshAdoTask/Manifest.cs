@@ -128,6 +128,12 @@
     {
         [JsonPropertyName("default")]
         public string Default { get; set; } = string.Empty;
+        public Icon()
+        { }
+        public Icon(string Path)
+        {
+            Default = Path;
+        }
     }
     public partial class File
     {
