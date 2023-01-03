@@ -37,13 +37,13 @@
         [JsonPropertyName("demands")]
         public List<string>? Demands { get; set; }
         [JsonPropertyName("minimumAgentVersion")]
-        public string MinimumAgentVersion { get; set; } = string.Empty;
+        public string? MinimumAgentVersion { get; set; } = string.Empty;
         [JsonPropertyName("vresion")]
         public Version Version { get; set; } = new Version();
         [JsonPropertyName("instanceNameFormat")]
-        public string InstanceNameFormat { get; set; } = string.Empty;
+        public string? InstanceNameFormat { get; set; } = string.Empty;
         [JsonPropertyName("releaseNotes")]
-        public string ReleaseNotes { get; set; } = string.Empty;
+        public string? ReleaseNotes { get; set; } = string.Empty;
         [JsonPropertyName("inputs")]
         public List<Input> Inputs { get; set; } = new List<Input>();
         [JsonPropertyName("dataSourceBindings")]
@@ -72,6 +72,17 @@
             options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
 
             return JsonSerializer.Serialize<Task>(this, options);
+        }
+        public Task()
+        { }
+        public Task (string Id, string Name, string FriendlyName, string Author)
+        {
+            this.Id = Id;
+            this.Name = Name;
+            this.FriendlyName = FriendlyName;
+            this.Author = Author;
+            MinimumAgentVersion = "1.95.0";
+            InstanceNameFormat = Name + " $(message)";
         }
     }
 
