@@ -43,7 +43,7 @@
         [JsonPropertyName("instanceNameFormat")]
         public string? InstanceNameFormat { get; set; } = string.Empty;
         [JsonPropertyName("releaseNotes")]
-        public string? ReleaseNotes { get; set; } = string.Empty;
+        public string? ReleaseNotes { get; set; }
         [JsonPropertyName("inputs")]
         public List<Input> Inputs { get; set; } = new List<Input>();
         [JsonPropertyName("dataSourceBindings")]
@@ -157,7 +157,7 @@
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
         [JsonPropertyName("aliases")]
-        public List<string> Aliases { get; set; } = new List<string>();
+        public List<string>? Aliases { get; set; }
         [JsonPropertyName("label")]
         public string Label { get; set; } = string.Empty;
         [JsonPropertyName("type")]
@@ -169,13 +169,13 @@
         [JsonPropertyName("helpMarkDown")]
         public string HelpMarkDown { get; set; } = string.Empty;
         [JsonPropertyName("groupName")]
-        public string GroupName { get; set; } = string.Empty;
+        public string? GroupName { get; set; }
         [JsonPropertyName("visibleRule")]
-        public string VisibleRule { get; set; } = string.Empty;
+        public string? VisibleRule { get; set; }
         [JsonPropertyName("properties")]
-        public Property Properties { get; set; } = new Property();
+        public Property? Properties { get; set; }
         [JsonPropertyName("options")]
-        public Dictionary<string, object> Options { get; set; } = new Dictionary<string, object>();
+        public Dictionary<string, object>? Options { get; set; }
         public Input()
         { }
         public Input (string Name, TaskType Type, string Label, bool Required, string HelpMarkDown)
