@@ -15,7 +15,7 @@
     {
         [Parameter(Mandatory = true, Position = 0, ValueFromPipeline = true)]
         public Manifest? Manifest { get; set; }
-        [Parameter(Mandatory = true, Position = 1)]
+        [Parameter(Mandatory = false, Position = 1)]
         public SwitchParameter AzureArtifacts { get; set; }
         [Parameter(Mandatory = false, Position = 2)]
         public SwitchParameter AzureBoards { get; set; }
@@ -27,7 +27,6 @@
         public SwitchParameter AzureTestPlans { get; set; }
         protected override void BeginProcessing()
         {
-            // AzureArtifacts, AzureBoards, AzurePipelines, AzureRepos, AzureTestPlans
             WriteVerbose("SetCategory    : Begin Processing");
             WriteVerbose("AzureArtifacts : " + AzureArtifacts);
             WriteVerbose("AzureBoards    : " + AzureBoards);
