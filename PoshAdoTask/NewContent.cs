@@ -1,14 +1,14 @@
-﻿namespace PoshAdoTask.Cmdlets
+﻿namespace PoshAdoTask.Manifest.Cmdlets
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Management.Automation;
-    using PoshAdoTask.Types;
+    using PoshAdoTask.Manifest.Types;
 
     [Cmdlet(VerbsCommon.New, "Content", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Types.Content))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Content))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewContent : PSCmdlet
     {

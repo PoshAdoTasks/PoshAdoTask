@@ -1,15 +1,15 @@
-﻿namespace PoshAdoTask.Cmdlets
+﻿namespace PoshAdoTask.Manifest.Cmdlets
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Management.Automation;
-    using PoshAdoTask.Types;
+    using PoshAdoTask.Manifest.Types;
     using System.Configuration;
 
     [Cmdlet(VerbsCommon.Set, "Category", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Types.Link))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Link))]
     [CmdletBinding(PositionalBinding = true)]
     public class SetCategory : PSCmdlet
     {

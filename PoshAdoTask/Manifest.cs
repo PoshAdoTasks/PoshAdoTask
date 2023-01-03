@@ -1,4 +1,4 @@
-﻿namespace PoshAdoTask.Types
+﻿namespace PoshAdoTask.Manifest.Types
 {
     using System;
     using System.Collections.Generic;

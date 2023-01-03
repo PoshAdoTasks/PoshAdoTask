@@ -1,4 +1,4 @@
-﻿namespace PoshAdoTask.Types
+﻿namespace PoshAdoTask.Task.Types
 {
     using System.Collections.Generic;
     using System.Text.Json;
