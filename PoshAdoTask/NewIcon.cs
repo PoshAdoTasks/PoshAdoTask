@@ -1,0 +1,27 @@
+﻿namespace PoshAdoTask.Cmdlets
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Management.Automation;
+    using PoshAdoTask.Types;
+
+    [Cmdlet(VerbsCommon.New, "Icon", HelpUri = "")]
+    [OutputType(typeof(PoshAdoTask.Types.Repository))]
+    [CmdletBinding(PositionalBinding = true)]
+    public class NewIcon : PSCmdlet
+    {
+        [Parameter(Mandatory = true, Position = 0)]
+        public string Path { get; set; } = string.Empty;
+        protected override void BeginProcessing()
+        {
+            WriteVerbose("NewIcon : Begin Processing");
+            WriteVerbose("Path          : " + Path);
+
+            Icon newIcon = new(Path);
+
+            WriteObject(newIcon);
+        }
+    }
+}
