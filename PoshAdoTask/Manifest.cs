@@ -90,7 +90,6 @@
         }
     }
     public enum ManifestCategory { AzureArtifacts, AzureBoards, AzurePipelines, AzureRepos, AzureTestPlans };
-    public enum TargetId { MicrosoftTeamFoundationServer, MicrosoftTeamFoundationServerIntegration, MicrosoftVisualStudioServices, MicrosoftVisualStudioServicesCloud, MicrosoftVisualStudioServicesCloudIntegration, MicrosoftVisualStudioServicesIntegration };
     public enum GalleryFlag { Paid, Preview, Public };
     public enum RepositoryType { Cvs, Git, Mercurial, Svn };
     public enum RestrictedDefinition { Anonymous, Member, Public };
@@ -98,13 +97,22 @@
     public enum Scope { VsoAcquisitionWrite, VsoAgentpools, VsoAgentpoolsListen, VsoAgentpoolsManage, VsoAnalytics, VsoAuditlog, VsoBase, VsoBuild, VsoBuildExecute, VsoBuildFork, VsoCode, VsoCodeFull, VsoCodeManage, VsoCodeStatus, VsoCodeWrite, VsoCommerceWrite, VsoConnectedServer, VsoDashboards, VsoDashboardsManage, VsoEntitlements, VsoExtension, VsoExtensionData, VsoExtensionDataWrite, VsoExtensionDefault, VsoExtensionManage, VsoFeatures, VsoFeaturesWrite, VsoGallery, VsoGalleryAcquire, VsoGalleryManage, VsoGalleryPublish, VsoGovernanceManage, VsoGraph, VsoGraphManage, VsoGraphWrite, VsoHooks, VsoHooksInteract, VsoHooksWrite, VsoIdentity, VsoIdentityManage, VsoLicensing, VsoLoadtest, VsoLoadtestWrite, VsoMachinegroupManage, VsoMemberentitlementmanagement, VsoMemberentitlementmanagementWrite, VsoNotification, VsoNotificationDiagnostics, VsoNotificationManage, VsoNotificationPublish, VsoNotificationWrite, VsoPackaging, VsoPackagingManage, VsoPackagingWrite, VsoProfile, VsoProfileWrite, VsoProject, VsoProjectManage, VsoProjectWrite, VsoRelease, VsoReleaseExecute, VsoReleaseLogs, VsoReleaseManage, VsoSecurityManage, VsoServiceendpoint, VsoServiceendpointManage, VsoServiceendpointQuery, VsoSettings, VsoSettingsWrite, VsoSymbols, VsoSymbolsManage, VsoSymbolsWrite, VsoTaskgroupsManage, VsoTaskgroupsRead, VsoTaskgroupsWrite, VsoTest, VsoTestWrite, VsoTokenadministration, VsoTokens, VsoVariablegroupsManage, VsoVariablegroupsRead, VsoVariablegroupsWrite, VsoWiki, VsoWikiWrite, VsoWork, VsoWorkFull, VsoWorkWrite };
     public enum ContributionTypeEnum { Array, Boolean, DateTime, Double, Guid, Integer, Object, String, Uri };
 
+    public static class TargetId 
+    {
+        public static readonly string MicrosoftTeamFoundationServer = "Microsoft.TeamFoundation.Server";
+        public static readonly string MicrosoftTeamFoundationServerIntegration = "Microsoft.TeamFoundation.Server.Integration";
+        public static readonly string MicrosoftVisualStudioServices = "Microsoft.VisualStudio.Services";
+        public static readonly string MicrosoftVisualStudioServicesCloud = "Microsoft.VisualStudio.Services.Cloud";
+        public static readonly string MicrosoftVisualStudioServicesCloudIntegration = "Microsoft.VisualStudio.Services.Cloud.Integration";
+        public static readonly string MicrosoftVisualStudioServicesIntegration = "Microsoft.VisualStudio.Services.Integration";
+    }
     public partial class Target
     {
         [JsonPropertyName("id")]
-        public TargetId Id { get; set; }
+        public string Id { get; set; }
         [JsonPropertyName("version")]
         public string? Version { get; set; }
-        public Target (TargetId Id)
+        public Target (string Id)
         {
             this.Id = Id;
         }
