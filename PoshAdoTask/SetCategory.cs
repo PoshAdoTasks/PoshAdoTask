@@ -43,8 +43,8 @@
                 // need to decide if we're removing
                 // need to decide if we're setting
                 // can we test for -AzureArtifacts:$true -AzureArtifacts:$false
-                WriteVerbose(MyInvocation.BoundParameters.ContainsKey("AzureArtifacts").ToString());
-                WriteVerbose(MyInvocation.BoundParameters["AzureArtifacts"].ToString());
+                WriteVerbose(MyInvocation.BoundParameters.ContainsKey(nameof(AzureArtifacts)).ToString());
+                WriteVerbose(MyInvocation.BoundParameters[nameof(AzureArtifacts)].ToString());
                 if (AzureArtifacts) { Manifest.Categories.Add(ManifestCategory.AzureArtifacts); }
                 if (AzureBoards) { Manifest.Categories.Add(ManifestCategory.AzureBoards); }
                 if (AzurePipelines) { Manifest.Categories.Add(ManifestCategory.AzurePipelines); }
