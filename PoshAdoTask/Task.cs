@@ -31,7 +31,7 @@
         [JsonPropertyName("visibility")]
         public List<Visibility> Visibility { get; set; } = new List<Visibility>();
         [JsonPropertyName("category")]
-        public TaskCategory? Category { get; set; }
+        public string? Category { get; set; }
         [JsonPropertyName("groups")]
         public List<Group>? Groups { get; set; }
         [JsonPropertyName("demands")]
@@ -304,19 +304,26 @@
         }
     }
     public enum TaskType { boolean, filePath, multiline, picklist, radio, secureFile, @string, @int, identities, querycontrol}
-    public enum TaskCategory { AzureArtifacts, AzureBoards, AzurePipelines, AzureRepos, AzureTestPlans, Build, Deploy, Package, Test, Utility };
-
     public enum RequestVerb { Delete, Get, Head, Options, Patch, Post, Put, Trace };
-
     public enum Platform { Windows };
-
     public enum StringBoolean { False, True };
-
     public enum Mode { Any, Restricted };
-
     public enum RunsOn { Agent, DeploymentGroup, MachineGroup, Server, ServerGate };
-
     public enum Visibility { Build, Release };
+    public static class TaskCategory
+    {
+        public static readonly string AzureArtifacts = "Azure Artifacts";
+        public static readonly string AzureBoards = "Azure Boards";
+        public static readonly string AzurePipelines = "Azure Pipelines";
+        public static readonly string AzureRepos = "Azure Repos";
+        public static readonly string AzureTestPlans = "Azure Test Plans";
+        public static readonly string Build = "Build";
+        public static readonly string Deploy = "Deploy";
+        public static readonly string Package = "Package";
+        public static readonly string Test = "Test";
+        public static readonly string Utility = "Utility";
+    }
+
     public partial struct DefaultValue
     {
         public bool? Bool;
