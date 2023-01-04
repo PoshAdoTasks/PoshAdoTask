@@ -7,10 +7,9 @@
     using System.Management.Automation;
     using PoshAdoTask.Task.Types;
     using System.Configuration;
-    using PoshAdoTask.Manifest.Types;
 
     [Cmdlet(VerbsCommon.Add, "Input", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Link))]
+    [OutputType(typeof(PoshAdoTask.Task.Types.Input))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddInput : PSCmdlet
     {
@@ -18,14 +17,14 @@
         public Task? Task { get; set; }
         [Parameter(Mandatory = true, Position = 1)]
         public string? Name { get; set; }
-        [Parameter(Mandatory = false, Position = 2)]
+        [Parameter(Mandatory = true, Position = 2)]
         [ValidateSet("boolean", "filePath", "multiline", "picklist", "radio", "secureFile", "string", "int", "identities", "querycontrol")]
         public string? Type { get; set; }
-        [Parameter(Mandatory = true, Position = 3)]
+        [Parameter(Mandatory = false, Position = 3)]
         public string? Label { get; set; }
-        [Parameter(Mandatory = true, Position = 4)]
-        public bool? Required { get; set; }
-        [Parameter(Mandatory = true, Position = 5)]
+        [Parameter(Mandatory = false, Position = 4)]
+        public SwitchParameter Required { get; set; }
+        [Parameter(Mandatory = false, Position = 5)]
         public string? HelpMarkDown { get; set; }
         protected override void BeginProcessing()
         {
