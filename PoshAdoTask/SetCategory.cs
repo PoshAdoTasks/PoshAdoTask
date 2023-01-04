@@ -52,6 +52,11 @@
             WriteVerbose("AzurePipelines : " + AzurePipelines);
             WriteVerbose("AzureRepos     : " + AzureRepos);
             WriteVerbose("AzureTestPlans : " + AzureTestPlans);
+            WriteVerbose("Build          : " + Build);
+            WriteVerbose("Utility        : " + Utility);
+            WriteVerbose("Test           : " + Test);
+            WriteVerbose("Package        : " + Package);
+            WriteVerbose("Deploy         : " + Deploy);
         }
         protected override void ProcessRecord()
         {
