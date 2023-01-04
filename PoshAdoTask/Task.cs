@@ -294,6 +294,14 @@
         public double Minor { get; set; }
         [JsonPropertyName("Patch")]
         public double Patch { get; set; }
+        public Version()
+        { }
+        public Version (System.Version Version)
+        {
+            Major = Version.Major;
+            Minor = Version.Minor;
+            Patch = Version.Build;
+        }
     }
     public enum TaskType { boolean, filePath, multiline, picklist, radio, secureFile, @string, @int, identities, querycontrol}
     public enum TaskCategory { AzureArtifacts, AzureBoards, AzurePipelines, AzureRepos, AzureTestPlans, Build, Deploy, Package, Test, Utility };
