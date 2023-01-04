@@ -6,6 +6,7 @@
     using System.Text;
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
+    using PoshAdoTask.Task.Types;
     using System.Configuration;
 
     [Cmdlet(VerbsCommon.Set, "Category", HelpUri = "")]
@@ -13,18 +14,36 @@
     [CmdletBinding(PositionalBinding = true)]
     public class SetCategory : PSCmdlet
     {
-        [Parameter(Mandatory = true, Position = 0, ValueFromPipeline = true)]
+        [Parameter(Mandatory = true, Position = 0, ValueFromPipeline = true, ParameterSetName = "Manifest")]
         public Manifest? Manifest { get; set; }
-        [Parameter(Mandatory = false, Position = 1)]
+        [Parameter(Mandatory = true, Position = 0, ValueFromPipeline = true, ParameterSetName = "Task")]
+        public Task? Task { get; set; }
+
+        [Parameter(Mandatory = false, Position = 1, ParameterSetName = "Manifest")]
+        [Parameter(Mandatory = false, Position = 1, ParameterSetName = "Task")]
         public SwitchParameter AzureArtifacts { get; set; }
-        [Parameter(Mandatory = false, Position = 2)]
+        [Parameter(Mandatory = false, Position = 2, ParameterSetName = "Manifest")]
+        [Parameter(Mandatory = false, Position = 2, ParameterSetName = "Task")]
         public SwitchParameter AzureBoards { get; set; }
-        [Parameter(Mandatory = false, Position = 3)]
+        [Parameter(Mandatory = false, Position = 3, ParameterSetName = "Manifest")]
+        [Parameter(Mandatory = false, Position = 3, ParameterSetName = "Task")]
         public SwitchParameter AzurePipelines { get; set; }
-        [Parameter(Mandatory = false, Position = 2)]
+        [Parameter(Mandatory = false, Position = 4, ParameterSetName = "Manifest")]
+        [Parameter(Mandatory = false, Position = 4, ParameterSetName = "Task")]
         public SwitchParameter AzureRepos { get; set; }
-        [Parameter(Mandatory = false, Position = 3)]
+        [Parameter(Mandatory = false, Position = 5, ParameterSetName = "Manifest")]
+        [Parameter(Mandatory = false, Position = 5, ParameterSetName = "Task")]
         public SwitchParameter AzureTestPlans { get; set; }
+        [Parameter(Mandatory = false, Position = 6, ParameterSetName = "Task")]
+        public SwitchParameter Build { get; set; }
+        [Parameter(Mandatory = false, Position = 7, ParameterSetName = "Task")]
+        public SwitchParameter Utility { get; set; }
+        [Parameter(Mandatory = false, Position = 8, ParameterSetName = "Task")]
+        public SwitchParameter Test { get; set; }
+        [Parameter(Mandatory = false, Position = 9, ParameterSetName = "Task")]
+        public SwitchParameter Package { get; set; }
+        [Parameter(Mandatory = false, Position = 10, ParameterSetName = "Task")]
+        public SwitchParameter Deploy { get; set; }
         protected override void BeginProcessing()
         {
             WriteVerbose("SetCategory    : Begin Processing");
@@ -154,11 +173,25 @@
                     }
                 }
             }
+            if (Task != null)
+            {
+                if (AzureArtifacts) { Task.Category = TaskCategory.AzureArtifacts; }
+                if (AzureBoards) { Task.Category = TaskCategory.AzureBoards; }
+                if (AzurePipelines) { Task.Category = TaskCategory.AzurePipelines; }
+                if (AzureRepos) { Task.Category = TaskCategory.AzureRepos; }
+                if (AzureTestPlans) { Task.Category = TaskCategory.AzureTestPlans; }
+                if (Build) { Task.Category = TaskCategory.Build; }
+                if (Utility) { Task.Category = TaskCategory.Utility; }
+                if (Test) { Task.Category = TaskCategory.Test; }
+                if (Package) { Task.Category = TaskCategory.Package; }
+                if (Deploy) { Task.Category = TaskCategory.Deploy; }
+            }
         }
         protected override void EndProcessing()
         {
             WriteVerbose("SetCategory    : End Process");
-            WriteObject(Manifest);
+            if (Manifest != null) { WriteObject(Manifest); }
+            if (Task != null) { WriteObject(Task); }
         }
     }
 }
