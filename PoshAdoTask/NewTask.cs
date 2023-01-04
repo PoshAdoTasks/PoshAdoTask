@@ -22,6 +22,8 @@
         public string Description { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 4)]
         public string Author { get; set; } = string.Empty;
+        [Parameter(Mandatory = false, Position = 5)]
+        public string? Version { get; set; } = string.Empty;
         protected override void BeginProcessing()
         {
             WriteVerbose("NewTask      : Begin Processing");
@@ -30,12 +32,16 @@
             WriteVerbose("FriendlyName : " + FriendlyName);
             WriteVerbose("Description  : " + Description);
             WriteVerbose("Author       : " + Author);
+            WriteVerbose("Version      : " + Version);
 
             Task newTask = new(Id, Name, FriendlyName, Author)
             {
-                Description = Description
+                Description = Description,
             };
-
+            if (!(string.IsNullOrEmpty(Version)))
+            {
+                newTask.Version = new PoshAdoTask.Task.Types.Version(new System.Version(Version));
+            }
             WriteObject(newTask);
         }
     }
