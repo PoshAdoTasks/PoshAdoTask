@@ -18,7 +18,7 @@
         public string Name { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 2)]
         public string FriendlyName { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 3)]
+        [Parameter(Mandatory = false, Position = 3)]
         public string Description { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 4)]
         public string Author { get; set; } = string.Empty;

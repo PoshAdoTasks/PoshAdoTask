@@ -20,7 +20,7 @@
         public string Name { get; set; } = string.Empty;
         [Parameter(Mandatory = true, Position = 3)]
         public string Publisher { get; set; } = string.Empty;
-        [Parameter(Mandatory = true, Position = 4)]
+        [Parameter(Mandatory = false, Position = 4)]
         public string Description { get; set; } = string.Empty;
         [Parameter(Mandatory = false, Position = 5)]
         public long ManifestVersion { get; set; } = 1;
