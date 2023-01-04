@@ -17,15 +17,15 @@
         public Task? Task { get; set; }
         protected override void BeginProcessing()
         {
-            WriteVerbose("AddInput     : Begin Processing");
+            WriteVerbose("OutTask : Begin Processing");
         }
         protected override void ProcessRecord()
         {
-            WriteVerbose("AddInput : Process Record");
+            WriteVerbose("OutTask : Process Record");
         }
         protected override void EndProcessing()
         {
-            WriteVerbose("AddInput : End Process");
+            WriteVerbose("OutTask : End Process");
             if (Task != null)
             {
                 WriteObject(Task.ToString());

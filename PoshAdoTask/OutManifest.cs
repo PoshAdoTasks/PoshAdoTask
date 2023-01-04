@@ -17,15 +17,15 @@
         public Manifest? Manifest { get; set; }
         protected override void BeginProcessing()
         {
-            WriteVerbose("AddInput     : Begin Processing");
+            WriteVerbose("OutManifest : Begin Processing");
         }
         protected override void ProcessRecord()
         {
-            WriteVerbose("AddInput : Process Record");
+            WriteVerbose("OutManifest : Process Record");
         }
         protected override void EndProcessing()
         {
-            WriteVerbose("AddInput : End Process");
+            WriteVerbose("OutManifest : End Process");
             if (Manifest != null)
             {
                 WriteObject(Manifest.ToString());
