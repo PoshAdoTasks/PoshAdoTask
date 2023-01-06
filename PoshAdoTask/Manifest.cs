@@ -61,6 +61,48 @@
         public List<ContributionType>? ContributionTypes { get; set; }
         public Manifest()
         { }
+        public Manifest(string? json)
+        {
+            if (!(string.IsNullOrEmpty(json)))
+            {
+                JsonSerializerOptions options = new JsonSerializerOptions();
+
+                options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+                options.Converters.Add(new JsonStringEnumConverter());
+                options.PropertyNameCaseInsensitive = true;
+
+                Manifest? manifest = JsonSerializer.Deserialize<Manifest>(json, options);
+                if (manifest != null)
+                {
+                    ManifestVersion = manifest.ManifestVersion;
+                    Id = manifest.Id;
+                    Version = manifest.Version;
+                    Name = manifest.Name;
+                    Publisher = manifest.Publisher;
+                    Categories = manifest.Categories;
+                    Targets = manifest.Targets;
+                    Scopes = manifest.Scopes;
+                    Demands = manifest.Demands;
+                    BaseUri = manifest.BaseUri;
+                    Description = manifest.Description;
+                    Icons = manifest.Icons;
+                    Tags = manifest.Tags;
+                    GalleryFlags = manifest.GalleryFlags;
+                    Licensing = manifest.Licensing;
+                    Galleryproperties = manifest.Galleryproperties;
+                    Screenshots = manifest.Screenshots;
+                    Content = manifest.Content;
+                    Links = manifest.Links;
+                    Repository = manifest.Repository;
+                    Badges = manifest.Badges;
+                    Branding = manifest.Branding;
+                    Public = manifest.Public;
+                    Files = manifest.Files;
+                    Contributions = manifest.Contributions;
+                    ContributionTypes = manifest.ContributionTypes;
+                }
+            }
+        }
         public Manifest(long ManifestVersion, string Id, string Version, string Name, string Publisher)
         {
             this.ManifestVersion = ManifestVersion;

@@ -1,6 +1,8 @@
 ﻿namespace PoshAdoTask.Task.Types
 {
     using System.Collections.Generic;
+    using System.Configuration;
+    using System.Security.Policy;
     using System.Text.Json;
     using System.Text.Json.Serialization;
 
@@ -38,7 +40,7 @@
         public List<string>? Demands { get; set; }
         [JsonPropertyName("minimumAgentVersion")]
         public string? MinimumAgentVersion { get; set; } = string.Empty;
-        [JsonPropertyName("vresion")]
+        [JsonPropertyName("version")]
         public Version Version { get; set; } = new Version();
         [JsonPropertyName("instanceNameFormat")]
         public string? InstanceNameFormat { get; set; } = string.Empty;
@@ -75,6 +77,51 @@
         }
         public Task()
         { }
+        public Task(string json)
+        {
+            if (!(string.IsNullOrEmpty(json)))
+            {
+                JsonSerializerOptions options = new JsonSerializerOptions();
+
+                options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+                options.Converters.Add(new JsonStringEnumConverter());
+                options.PropertyNameCaseInsensitive = true;
+
+                Task? task = JsonSerializer.Deserialize<Task>(json, options);
+                if (task != null)
+                {
+                    Id = task.Id;
+                    Name = task.Name;
+                    FriendlyName = task.FriendlyName;
+                    task.Description = task.Description;
+                    HelpUrl = task.HelpUrl;
+                    HelpMarkDown = task.HelpMarkDown;
+                    Author = task.Author;
+                    Preview = task.Preview;
+                    Deprecated = task.Deprecated;
+                    ShowEnvironmentVariables = task.ShowEnvironmentVariables;
+                    RunsOn = task.RunsOn;
+                    Visibility = task.Visibility;
+                    Category = task.Category;
+                    Groups = task.Groups;
+                    Demands = task.Demands;
+                    MinimumAgentVersion = task.MinimumAgentVersion;
+                    Version = task.Version;
+                    InstanceNameFormat = task.InstanceNameFormat;
+                    ReleaseNotes = task.ReleaseNotes;
+                    Inputs = task.Inputs;
+                    DataSourceBindings = task.DataSourceBindings;
+                    SourceDefinitions = task.SourceDefinitions;
+                    Prejobexecution = task.Prejobexecution;
+                    Execution = task.Execution;
+                    Postjobexecution = task.Postjobexecution;
+                    Messages = task.Messages;
+                    OutputVariables = task.OutputVariables;
+                    Restrictions = task.Restrictions;
+                    Schema = task.Schema;
+                }
+            }
+        }
         public Task (string Id, string Name, string FriendlyName, string Author)
         {
             this.Id = Id;
@@ -163,7 +210,7 @@
         [JsonPropertyName("type")]
         public TaskType Type { get; set; }
         [JsonPropertyName("defaultValue")]
-        public DefaultValue? DefaultValue { get; set; }
+        public dynamic? DefaultValue { get; set; }
         [JsonPropertyName("required")]
         public bool? Required { get; set; }
         [JsonPropertyName("helpMarkDown")]
@@ -285,7 +332,7 @@
         [JsonPropertyName("authKey")]
         public string AuthKey { get; set; } = string.Empty;
     }
-
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
     public partial class Version
     {
         [JsonPropertyName("Major")]
@@ -324,12 +371,4 @@
         public static readonly string Utility = "Utility";
     }
 
-    public partial struct DefaultValue
-    {
-        public bool? Bool;
-        public string String;
-
-        public static implicit operator DefaultValue(bool Bool) => new DefaultValue { Bool = Bool };
-        public static implicit operator DefaultValue(string String) => new DefaultValue { String = String };
-    }
 }
