@@ -8,10 +8,10 @@
     using PoshAdoTask.Task.Types;
     using System.Configuration;
 
-    [Cmdlet(VerbsCommon.Add, "Execution", HelpUri = "")]
+    [Cmdlet(VerbsCommon.New, "Execution", HelpUri = "")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Link))]
     [CmdletBinding(PositionalBinding = true)]
-    public class AddExecution : PSCmdlet
+    public class NewExecution : PSCmdlet
     {
         [Parameter(Mandatory = true, Position = 0, ValueFromPipeline = true)]
         public Task? Task { get; set; }
@@ -22,13 +22,13 @@
         public string? Target { get; set; }
         protected override void BeginProcessing()
         {
-            WriteVerbose("AddExecution : Begin Processing");
+            WriteVerbose("NewExecution : Begin Processing");
             WriteVerbose("Execution    : " + Execution);
             WriteVerbose("Target       : " + Target);
         }
         protected override void ProcessRecord()
         {
-            WriteVerbose("AddExecution : Process Record");
+            WriteVerbose("NewExecution : Process Record");
             if (Task != null)
             {
                 Execution newExecution = new();
@@ -41,7 +41,7 @@
         }
         protected override void EndProcessing()
         {
-            WriteVerbose("AddExecution : End Process");
+            WriteVerbose("NewExecution : End Process");
             WriteObject(Task);
         }
     }
