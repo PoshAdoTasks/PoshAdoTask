@@ -1,5 +1,5 @@
 $script:moduleName = "PoshAdoTask"
-$script:Github = "https://github.com/PoshAdoTask/PoshAdoTask"
+$script:Github = "https://github.com/PoshAdoTasks/PoshAdoTask"
 $script:PoshGallery = "https://www.powershellgallery.com/packages/PoshAdoTask"
 $script:Nuget = ""
 $script:DiscordChannel = "https://discord.com/channels/1044305359021555793/1044305460729225227"
@@ -22,10 +22,10 @@ Task UpdateReadme -Description "Update the README file" -depends CreateModuleDir
 
  $TableHeaders = "| Latest Version | PowerShell Gallery | Issues | License | Discord |"
  $Columns = "|-----------------|----------------|----------------|----------------|----------------|"
- $VersionBadge = "[![Latest Version](https://img.shields.io/github/v/tag/PoshAdoTask/PoshAdoTask)](https://github.com/PoshAdoTask/PoshAdoTask/tags)"
+ $VersionBadge = "[![Latest Version](https://img.shields.io/github/v/tag/PoshAdoTasks/PoshAdoTask)](https://github.com/PoshAdoTasks/PoshAdoTask/tags)"
  $GalleryBadge = "[![Powershell Gallery](https://img.shields.io/powershellgallery/dt/PoshAdoTask)](https://www.powershellgallery.com/packages/PoshAdoTask)"
- $IssueBadge = "[![GitHub issues](https://img.shields.io/github/issues/PoshAdoTask/PoshAdoTask)](https://github.com/PoshAdoTask/PoshAdoTask/issues)"
- $LicenseBadge = "[![GitHub license](https://img.shields.io/github/license/PoshAdoTask/PoshAdoTask)](https://github.com/PoshAdoTask/PoshAdoTask/blob/master/LICENSE)"
+ $IssueBadge = "[![GitHub issues](https://img.shields.io/github/issues/PoshAdoTasks/PoshAdoTask)](https://github.com/PoshAdoTasks/PoshAdoTask/issues)"
+ $LicenseBadge = "[![GitHub license](https://img.shields.io/github/license/PoshAdoTasks/PoshAdoTask)](https://github.com/PoshAdoTasks/PoshAdoTask/blob/master/LICENSE)"
  $DiscordBadge = "[![Discord Server](https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0b5493894cf60b300587_full_logo_white_RGB.svg)]($($script:DiscordChannel))"
 
  if (!(Get-Module -Name $script:moduleName )) { Import-Module -Name ".\Module\$($script:moduleName).psd1" }
