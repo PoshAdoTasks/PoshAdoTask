@@ -10,7 +10,7 @@
     using System.Text.Json.Serialization;
 
     [Cmdlet(VerbsCommon.Get, "Manifest", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Repository))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class GetManifest : PSCmdlet
     {

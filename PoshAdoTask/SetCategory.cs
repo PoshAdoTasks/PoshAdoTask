@@ -10,7 +10,8 @@
     using System.Configuration;
 
     [Cmdlet(VerbsCommon.Set, "Category", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Link))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
+    [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class SetCategory : PSCmdlet
     {

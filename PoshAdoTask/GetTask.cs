@@ -10,7 +10,7 @@
     using System.Text.Json.Serialization;
 
     [Cmdlet(VerbsCommon.Get, "Task", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Repository))]
+    [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class GetTask : PSCmdlet
     {

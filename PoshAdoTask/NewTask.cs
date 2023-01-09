@@ -8,7 +8,7 @@
     using PoshAdoTask.Task.Types;
 
     [Cmdlet(VerbsCommon.New, "Task", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
+    [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewTask : PSCmdlet
     {

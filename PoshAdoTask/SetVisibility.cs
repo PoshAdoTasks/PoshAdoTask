@@ -10,7 +10,7 @@
     using System.Management;
 
     [Cmdlet(VerbsCommon.Set, "Visibility", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Task.Types.Visibility))]
+    [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class SetVisibility : PSCmdlet
     {

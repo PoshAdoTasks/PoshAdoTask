@@ -9,7 +9,7 @@
     using System.Configuration;
 
     [Cmdlet(VerbsCommon.Add, "Target", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Link))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddTarget : PSCmdlet
     {

@@ -9,7 +9,7 @@
     using System.Configuration;
 
     [Cmdlet(VerbsCommon.Add, "Input", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Task.Types.Input))]
+    [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddInput : PSCmdlet
     {

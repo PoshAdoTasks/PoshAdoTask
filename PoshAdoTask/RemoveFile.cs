@@ -8,7 +8,7 @@
     using PoshAdoTask.Manifest.Types;
 
     [Cmdlet(VerbsCommon.Remove, "File", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Link))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class RemoveFile : PSCmdlet
     {

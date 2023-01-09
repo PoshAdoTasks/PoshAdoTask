@@ -8,7 +8,7 @@
     using PoshAdoTask.Manifest.Types;
 
     [Cmdlet(VerbsCommon.New, "Icon", HelpUri = "")]
-    [OutputType(typeof(PoshAdoTask.Manifest.Types.Repository))]
+    [OutputType(typeof(PoshAdoTask.Manifest.Types.Icon))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewIcon : PSCmdlet
     {
