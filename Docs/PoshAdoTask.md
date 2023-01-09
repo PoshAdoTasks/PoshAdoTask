@@ -7,70 +7,93 @@ Locale: en-US
 ---
 
 # PoshAdoTask Module
+
 ## Description
-{{ Fill in the Description }}
+
+This module provides a set of tools for build Azure Devops Extensions.
 
 ## PoshAdoTask Cmdlets
+
 ### [Add-Contribution](Add-Contribution.md)
-{{ Fill in the Description }}
+
+Add a contribution to the Manifest
 
 ### [Add-File](Add-File.md)
-{{ Fill in the Description }}
+
+Add a file to the Manifest
 
 ### [Add-Input](Add-Input.md)
-{{ Fill in the Description }}
+
+Add an input to the Task
 
 ### [Add-Target](Add-Target.md)
-{{ Fill in the Description }}
+
+Add a target to the Manifest
 
 ### [Get-Manifest](Get-Manifest.md)
-{{ Fill in the Description }}
+
+Get the Manifest
 
 ### [Get-Task](Get-Task.md)
-{{ Fill in the Description }}
+
+Get the Task
 
 ### [New-Content](New-Content.md)
-{{ Fill in the Description }}
+
+Add content to the Manifest
 
 ### [New-Execution](New-Execution.md)
-{{ Fill in the Description }}
+
+Add an execution to the Task
 
 ### [New-Icon](New-Icon.md)
-{{ Fill in the Description }}
+
+Add an icon to the Manifest
 
 ### [New-Link](New-Link.md)
-{{ Fill in the Description }}
+
+Add a link to the Manifest
 
 ### [New-Manifest](New-Manifest.md)
-{{ Fill in the Description }}
+
+Create the Manifest
 
 ### [New-Repository](New-Repository.md)
-{{ Fill in the Description }}
+
+Add a repository to the Manifest
 
 ### [New-Task](New-Task.md)
-{{ Fill in the Description }}
+
+Create the Task
 
 ### [Out-Manifest](Out-Manifest.md)
-{{ Fill in the Description }}
+
+Write the Manifest to the console
 
 ### [Out-Task](Out-Task.md)
-{{ Fill in the Description }}
+
+Write the Task to the console
 
 ### [Remove-Contribution](Remove-Contribution.md)
-{{ Fill in the Description }}
+
+Remove a contribution from the Manifest
 
 ### [Remove-File](Remove-File.md)
-{{ Fill in the Description }}
+
+Remove a file from the Manifest
 
 ### [Remove-Target](Remove-Target.md)
-{{ Fill in the Description }}
+
+Remove a target from the Manifest
 
 ### [Set-Category](Set-Category.md)
-{{ Fill in the Description }}
+
+Add a Category to the Manifest or Task
 
 ### [Set-GalleryFlag](Set-GalleryFlag.md)
-{{ Fill in the Description }}
+
+Add a galleryflag to the Manifest
 
 ### [Set-Visibility](Set-Visibility.md)
-{{ Fill in the Description }}
 
+Add visibility to the Task
