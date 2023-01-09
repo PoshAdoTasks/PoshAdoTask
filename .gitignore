@@ -10,6 +10,7 @@
 *.userosscache
 *.sln.docstates
 
+Module/
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -351,3 +352,4 @@ MigrationBackup/
 discord.poshmongo
 .gitignore
 nuget.config
+discord.poshadotask
