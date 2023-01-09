@@ -72,7 +72,7 @@
  # FunctionsToExport = @()
 
  # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
- CmdletsToExport      = @('Connect-Instance', 'New-Database', 'Get-Database', 'Remove-Database', 'New-Collection', 'Get-Collection', 'Remove-Collection', 'Add-Document', 'Get-Document', 'Remove-Document', 'Invoke-RunCommand')
+ CmdletsToExport      = @('Add-Contribution','Add-File','Add-Input','Add-Target','Get-Manifest','Get-Task','New-Content','New-Execution','New-Icon','New-Link','New-Manifest','New-Repository','New-Task','Out-Manifest','Out-Task','Remove-Contribution','Remove-File','Remove-Target','Set-Category','Set-GalleryFlag','Set-Visibility')
 
  # Variables to export from this module
  VariablesToExport    = '*'
