@@ -170,9 +170,33 @@
         [JsonPropertyName("Node")]
         public ExecutionObject? Node { get; set; }
         [JsonPropertyName("PowerShell3")]
-        public ExecutionObject PowerShell3 { get; set; } = new ExecutionObject();
+        public ExecutionObject? PowerShell3 { get; set; }
         [JsonPropertyName("PowerShell")]
         public ExecutionObject? PowerShell { get; set; }
+        public Execution()
+        {}
+        public Execution(string ExecutionOption, string? Target)
+        {
+            switch (ExecutionOption.ToLower())
+            {
+                case "node16":
+                    this.Node16 = new ExecutionObject(Target);
+                    break;
+                case "node10":
+                    this.Node10 = new ExecutionObject(Target);
+                    break;
+                case "node":
+                    this.Node = new ExecutionObject(Target);
+                    break;
+                case "powershell3":
+                    this.PowerShell3 = new ExecutionObject(Target);
+                    break;
+                case "powershell":
+                    this.PowerShell = new ExecutionObject(Target);
+                    break;
+            }
+
+        }
     }
 
     public partial class ExecutionObject
@@ -185,6 +209,13 @@
         public string? ArgumentFormat { get; set; }
         [JsonPropertyName("workingDirectory")]
         public string? WorkingDirectory { get; set; }
+        public ExecutionObject()
+        { }
+        public ExecutionObject(string? Target)
+        {
+            this.Target = Target;
+        }
+
     }
 
     public partial class Group
