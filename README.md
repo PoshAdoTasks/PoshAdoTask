@@ -1,95 +1,95 @@
 | Latest Version | PowerShell Gallery | Issues | License | Discord |
 |-----------------|----------------|----------------|----------------|----------------|
 | [![Latest Version](https://img.shields.io/github/v/tag/PoshAdoTasks/PoshAdoTask)](https://github.com/PoshAdoTasks/PoshAdoTask/tags) | [![Powershell Gallery](https://img.shields.io/powershellgallery/dt/PoshAdoTask)](https://www.powershellgallery.com/packages/PoshAdoTask) | [![GitHub issues](https://img.shields.io/github/issues/PoshAdoTasks/PoshAdoTask)](https://github.com/PoshAdoTasks/PoshAdoTask/issues) | [![GitHub license](https://img.shields.io/github/license/PoshAdoTasks/PoshAdoTask)](https://github.com/PoshAdoTasks/PoshAdoTask/blob/master/LICENSE) | [![Discord Server](https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0b5493894cf60b300587_full_logo_white_RGB.svg)](https://discord.com/channels/1044305359021555793/1044305460729225227) |
-
 # PoshAdoTask Module
 
 ## Description
 
-{{ Fill in the Description }}
+This module provides a set of tools for build Azure Devops Extensions.
 
 ## PoshAdoTask Cmdlets
 
 ### [Add-Contribution](Docs/Add-Contribution.md)
 
-{{ Fill in the Description }}
+Add a contribution to the Manifest
 
 ### [Add-File](Docs/Add-File.md)
 
-{{ Fill in the Description }}
+Add a file to the Manifest
 
 ### [Add-Input](Docs/Add-Input.md)
 
-{{ Fill in the Description }}
+Add an input to the Task
 
 ### [Add-Target](Docs/Add-Target.md)
 
-{{ Fill in the Description }}
+Add a target to the Manifest
 
 ### [Get-Manifest](Docs/Get-Manifest.md)
 
-{{ Fill in the Description }}
+Get the Manifest
 
 ### [Get-Task](Docs/Get-Task.md)
 
-{{ Fill in the Description }}
+Get the Task
 
 ### [New-Content](Docs/New-Content.md)
 
-{{ Fill in the Description }}
+Add content to the Manifest
 
 ### [New-Execution](Docs/New-Execution.md)
 
-{{ Fill in the Description }}
+Add an execution to the Task
 
 ### [New-Icon](Docs/New-Icon.md)
 
-{{ Fill in the Description }}
+Add an icon to the Manifest
 
 ### [New-Link](Docs/New-Link.md)
 
-{{ Fill in the Description }}
+Add a link to the Manifest
 
 ### [New-Manifest](Docs/New-Manifest.md)
 
-{{ Fill in the Description }}
+Create the Manifest
 
 ### [New-Repository](Docs/New-Repository.md)
 
-{{ Fill in the Description }}
+Add a repository to the Manifest
 
 ### [New-Task](Docs/New-Task.md)
 
-{{ Fill in the Description }}
+Create the Task
 
 ### [Out-Manifest](Docs/Out-Manifest.md)
 
-{{ Fill in the Description }}
+Write the Manifest to the console
 
 ### [Out-Task](Docs/Out-Task.md)
 
-{{ Fill in the Description }}
+Write the Task to the console
 
 ### [Remove-Contribution](Docs/Remove-Contribution.md)
 
-{{ Fill in the Description }}
+Remove a contribution from the Manifest
 
 ### [Remove-File](Docs/Remove-File.md)
 
-{{ Fill in the Description }}
+Remove a file from the Manifest
 
 ### [Remove-Target](Docs/Remove-Target.md)
 
-{{ Fill in the Description }}
+Remove a target from the Manifest
 
 ### [Set-Category](Docs/Set-Category.md)
 
-{{ Fill in the Description }}
+Add a Category to the Manifest or Task
 
 ### [Set-GalleryFlag](Docs/Set-GalleryFlag.md)
 
-{{ Fill in the Description }}
+Add a galleryflag to the Manifest
 
 ### [Set-Visibility](Docs/Set-Visibility.md)
 
-{{ Fill in the Description }}
+Add visibility to the Task
+
