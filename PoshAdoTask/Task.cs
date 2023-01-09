@@ -213,7 +213,10 @@
         { }
         public ExecutionObject(string? Target)
         {
-            this.Target = Target;
+            if (!(string.IsNullOrEmpty(Target)))
+            {
+                this.Target = Target;
+            }
         }
 
     }
