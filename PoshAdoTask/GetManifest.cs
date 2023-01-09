@@ -9,7 +9,7 @@
     using PoshAdoTask.Manifest.Types;
     using System.Text.Json.Serialization;
 
-    [Cmdlet(VerbsCommon.Get, "Manifest", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Get, "Manifest", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Get-Manifest.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class GetManifest : PSCmdlet

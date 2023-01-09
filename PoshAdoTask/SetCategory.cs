@@ -9,7 +9,7 @@
     using PoshAdoTask.Task.Types;
     using System.Configuration;
 
-    [Cmdlet(VerbsCommon.Set, "Category", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Set, "Category", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Set-Category.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]

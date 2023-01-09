@@ -8,7 +8,7 @@
     using PoshAdoTask.Manifest.Types;
     using System.Configuration;
 
-    [Cmdlet(VerbsData.Out, "Manifest", HelpUri = "")]
+    [Cmdlet(VerbsData.Out, "Manifest", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Out-Manifest.md")]
     [OutputType(typeof(System.Text.Json.JsonDocument))]
     [CmdletBinding(PositionalBinding = true)]
     public class OutManifest : PSCmdlet

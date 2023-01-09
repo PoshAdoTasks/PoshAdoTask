@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.New, "Icon", HelpUri = "")]
+    [Cmdlet(VerbsCommon.New, "Icon", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/New-Icon.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Icon))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewIcon : PSCmdlet

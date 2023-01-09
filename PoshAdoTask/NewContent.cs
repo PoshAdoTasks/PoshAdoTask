@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.New, "Content", HelpUri = "")]
+    [Cmdlet(VerbsCommon.New, "Content", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/New-Content.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Content))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewContent : PSCmdlet

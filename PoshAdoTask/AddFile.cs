@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.Add, "File", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Add, "File", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Add-File.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddFile : PSCmdlet

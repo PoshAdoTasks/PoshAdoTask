@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.Add, "Contribution", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Add, "Contribution", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Add-Contribution.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddContribution : PSCmdlet

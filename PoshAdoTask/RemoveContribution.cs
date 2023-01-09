@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.Remove, "Contribution", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Remove, "Contribution", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Remove-Contribution.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class RemoveContribution : PSCmdlet

@@ -9,7 +9,7 @@
     using System.Configuration;
     using System.Management;
 
-    [Cmdlet(VerbsCommon.Set, "GalleryFlag", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Set, "GalleryFlag", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Set-GalleryFlag.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class SetGalleryFlag : PSCmdlet

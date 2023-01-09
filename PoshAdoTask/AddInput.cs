@@ -8,7 +8,7 @@
     using PoshAdoTask.Task.Types;
     using System.Configuration;
 
-    [Cmdlet(VerbsCommon.Add, "Input", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Add, "Input", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Add-Input.md")]
     [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddInput : PSCmdlet

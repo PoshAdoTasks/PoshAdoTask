@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.Remove, "File", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Remove, "File", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Remove-File.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class RemoveFile : PSCmdlet

@@ -8,7 +8,7 @@
     using PoshAdoTask.Manifest.Types;
     using System.Configuration;
 
-    [Cmdlet(VerbsCommon.Add, "Target", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Add, "Target", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Add-Target.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class AddTarget : PSCmdlet

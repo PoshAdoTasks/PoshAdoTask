@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Task.Types;
 
-    [Cmdlet(VerbsCommon.New, "Task", HelpUri = "")]
+    [Cmdlet(VerbsCommon.New, "Task", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/New-Task.md")]
     [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewTask : PSCmdlet

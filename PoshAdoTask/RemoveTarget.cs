@@ -8,7 +8,7 @@
     using PoshAdoTask.Manifest.Types;
     using System.Configuration;
 
-    [Cmdlet(VerbsCommon.Remove, "Target", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Remove, "Target", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Remove-Target.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Manifest))]
     [CmdletBinding(PositionalBinding = true)]
     public class RemoveTarget : PSCmdlet

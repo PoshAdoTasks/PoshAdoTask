@@ -7,7 +7,7 @@
     using System.Management.Automation;
     using PoshAdoTask.Manifest.Types;
 
-    [Cmdlet(VerbsCommon.New, "Repository", HelpUri = "")]
+    [Cmdlet(VerbsCommon.New, "Repository", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/New-Repository.md")]
     [OutputType(typeof(PoshAdoTask.Manifest.Types.Repository))]
     [CmdletBinding(PositionalBinding = true)]
     public class NewRepository : PSCmdlet

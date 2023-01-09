@@ -9,7 +9,7 @@
     using PoshAdoTask.Task.Types;
     using System.Text.Json.Serialization;
 
-    [Cmdlet(VerbsCommon.Get, "Task", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Get, "Task", HelpUri = "https://github.com/PoshAdoTasks/PoshAdoTask/blob/main/Docs/Get-Task.md")]
     [OutputType(typeof(PoshAdoTask.Task.Types.Task))]
     [CmdletBinding(PositionalBinding = true)]
     public class GetTask : PSCmdlet
