@@ -6,19 +6,18 @@ $script:DiscordChannel = "https://discord.com/channels/1044305359021555793/10443
 
 Task default -depends UpdateReadme
 
-Task LocalUse -Description "Setup for local use and testing" -depends CreateModuleDirectory, CleanModuleDirectory, CleanProject, BuildProject, CopyModuleFiles, PesterTest -Action {
- $Global:settings = Get-Content .\ConnectionSettings
+Task LocalUse -Description "Setup for local use and testing" -depends CreateModuleDirectory, CleanModuleDirectory, CleanProject, BuildProject, CopyModuleFiles -Action {
 }
 
-Task UpdateHelp -Description "Update the help files" -depends CreateModuleDirectory, CleanProject, BuildProject, CopyModuleFiles, PesterTest -Action {
- $moduleName = 'PoshAdoTask'
- Import-Module -Name ".\Module\$($moduleName).psd1" -Scope Global -force;
+Task UpdateHelp -Description "Update the help files" -depends CreateModuleDirectory, CleanProject, BuildProject, CopyModuleFiles -Action {
+
+ Import-Module -Name ".\Module\$($script:moduleName)" -Scope Global -force;
  New-MarkdownHelp -Module PoshAdoTask -AlphabeticParamsOrder -UseFullTypeName -WithModulePage -OutputFolder .\Docs\ -ErrorAction SilentlyContinue
  Update-MarkdownHelp -Path .\Docs\ -AlphabeticParamsOrder -UseFullTypeName
 }
 
-Task UpdateReadme -Description "Update the README file" -depends CreateModuleDirectory, CleanProject, BuildProject, CopyModuleFiles, PesterTest -Action {
- $moduleName = 'PoshAdoTask'
+Task UpdateReadme -Description "Update the README file" -depends CreateModuleDirectory, CleanProject, BuildProject, CopyModuleFiles -Action {
+
  $readMe = Get-Item .\README.md
 
  $TableHeaders = "| Latest Version | PowerShell Gallery | Issues | License | Discord |"
@@ -27,9 +26,9 @@ Task UpdateReadme -Description "Update the README file" -depends CreateModuleDir
  $GalleryBadge = "[![Powershell Gallery](https://img.shields.io/powershellgallery/dt/PoshAdoTask)](https://www.powershellgallery.com/packages/PoshAdoTask)"
  $IssueBadge = "[![GitHub issues](https://img.shields.io/github/issues/PoshAdoTask/PoshAdoTask)](https://github.com/PoshAdoTask/PoshAdoTask/issues)"
  $LicenseBadge = "[![GitHub license](https://img.shields.io/github/license/PoshAdoTask/PoshAdoTask)](https://github.com/PoshAdoTask/PoshAdoTask/blob/master/LICENSE)"
- $DiscordBadge = "[![Discord Server](https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0b5493894cf60b300587_full_logo_white_RGB.svg)]($($DiscordChannel))"
+ $DiscordBadge = "[![Discord Server](https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0b5493894cf60b300587_full_logo_white_RGB.svg)]($($script:DiscordChannel))"
 
- if (!(Get-Module -Name $moduleName )) { Import-Module -Name ".\Module\$($moduleName).psd1" }
+ if (!(Get-Module -Name $script:moduleName )) { Import-Module -Name ".\Module\$($script:moduleName).psd1" }
 
  Write-Output $TableHeaders | Out-File $readMe.FullName -Force
  Write-Output $Columns | Out-File $readMe.FullName -Append
@@ -37,25 +36,25 @@ Task UpdateReadme -Description "Update the README file" -depends CreateModuleDir
 
  Get-Content .\Docs\PoshAdoTask.md | Select-Object -Skip 8 | ForEach-Object { $_.Replace('(', '(Docs/') } | Out-File $readMe.FullName -Append
  Write-Output "" | Out-File $readMe.FullName -Append
- Get-Content .\Build.md | Out-File $readMe.FullName -Append
+ #Get-Content .\Build.md | Out-File $readMe.FullName -Append
 }
 
-Task SetupModule -Description "Setup the PowerShell Module" -depends CreateModuleDirectory, CleanModuleDirectory, CleanProject, BuildProject, CopyModuleFiles, PesterTest, CreateExternalHelp, CreateCabFile, CreateNuSpec, NugetPack, NugetPush
+Task SetupModule -Description "Setup the PowerShell Module" -depends CreateModuleDirectory, CleanModuleDirectory, CleanProject, BuildProject, CopyModuleFiles, CreateExternalHelp, CreateCabFile, CreateNuSpec, NugetPack, NugetPush
 
-Task NewTaggedRelease -Description "Create a tagged release" -depends CreateModuleDirectory, CleanProject, BuildProject, CopyModuleFiles, PesterTest -Action {
- $moduleName = 'PoshAdoTask'
+Task NewTaggedRelease -Description "Create a tagged release" -depends CreateModuleDirectory, CleanProject, BuildProject, CopyModuleFiles -Action {
 
- if (!(Get-Module -Name $moduleName )) { Import-Module -Name ".\Module\$($moduleName).psd1" }
- $Version = (Get-Module -Name $moduleName | Select-Object -Property Version).Version.ToString()
- git tag -a v$version -m "$($moduleName) Version $($Version)"
+
+ if (!(Get-Module -Name $script:moduleName )) { Import-Module -Name ".\Module\$($script:moduleName).psd1" }
+ $Version = (Get-Module -Name $script:moduleName | Select-Object -Property Version).Version.ToString()
+ git tag -a v$version -m "$($script:moduleName) Version $($Version)"
  git push origin v$version
 }
 
 Task Post2Discord -Description "Post a message to discord" -Action {
- $moduleName = 'PoshAdoTask'
- $version = (Get-Module -Name $moduleName | Select-Object -Property Version).Version.ToString()
+
+ $version = (Get-Module -Name $script:moduleName | Select-Object -Property Version).Version.ToString()
  $Discord = Get-Content .\discord.PoshAdoTask | ConvertFrom-Json
- $Discord.message.content = "Version $($version) of $($moduleName) released. Please visit Github ($($Github)) or PowershellGallery ($($PoshGallery)) to download."
+ $Discord.message.content = "Version $($version) of $($script:moduleName) released. Please visit Github ($($script:Github)) or PowershellGallery ($($script:PoshGallery)) to download."
  Invoke-RestMethod -Uri $Discord.uri -Body ($Discord.message | ConvertTo-Json -Compress) -Method Post -ContentType 'application/json; charset=UTF-8'
 }
 
