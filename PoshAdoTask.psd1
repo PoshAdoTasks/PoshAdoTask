@@ -12,7 +12,7 @@
  RootModule           = 'PoshAdoTask.dll'
 
  # Version number of this module.
- ModuleVersion        = '1.0.0'
+ ModuleVersion        = '1.1.0'
 
  # Supported PSEditions
  # CompatiblePSEditions = @()
@@ -72,7 +72,7 @@
  # FunctionsToExport = @()
 
  # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
- CmdletsToExport      = @('Add-Contribution','Add-File','Add-Input','Add-Target','Get-Manifest','Get-Task','New-Content','New-Execution','New-Icon','New-Link','New-Manifest','New-Repository','New-Task','Out-Manifest','Out-Task','Remove-Contribution','Remove-File','Remove-Target','Set-Category','Set-GalleryFlag','Set-Visibility')
+ CmdletsToExport      = @('Add-Contribution','Add-File','Add-Input','Add-Target','Get-Manifest','Get-Task','New-Content','New-Execution','New-Icon','New-Link','New-Manifest','New-Repository','New-Task','Out-Manifest','Out-Task','Remove-Contribution','Remove-File','Remove-Target','Set-Category','Set-GalleryFlag','Set-Visibility','New-Version')
 
  # Variables to export from this module
  VariablesToExport    = '*'
