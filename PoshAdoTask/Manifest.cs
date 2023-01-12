@@ -254,7 +254,7 @@
     public partial class Repository
     {
         [JsonPropertyName("type")]
-        public RepositoryType Type { get; set; }
+        public string? Type { get; set; }
         [JsonPropertyName("uri")]
         public Uri? Uri { get; set; }
     }
