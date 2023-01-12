@@ -18,11 +18,14 @@
         public string? Id { get; set; }
         [Parameter(Mandatory = false, Position = 2)]
         public string? Type { get; set; } = "ms.vss-distributed-task.task";
+        [Parameter(Mandatory = true, Position = 3)]
+        public string? Name { get; set; }
         protected override void BeginProcessing()
         {
             WriteVerbose("AddContribution : Begin Processing");
             WriteVerbose("Id              : " + Id);
             WriteVerbose("Type            : " + Type);
+            WriteVerbose("Name            : " + Name);
         }
         protected override void ProcessRecord()
         {
@@ -33,7 +36,10 @@
                 if (!(string.IsNullOrEmpty(Id)) && !(string.IsNullOrEmpty(Type)))
                 {
                     newContribution = new(Id, Type);
-                    newContribution.Properties.Add("name", Id);
+                    if (!(string.IsNullOrEmpty(Name)))
+                    {
+                        newContribution.Properties.Add("name", Name);
+                    }
                 }
                 if (Manifest.Contributions == null)
                 {
