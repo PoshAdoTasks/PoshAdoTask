@@ -27,19 +27,19 @@
             switch (Type.ToLower())
             {
                 case "cvs":
-                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = RepositoryType.Cvs; }
+                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = "cvs"; }
 
                     break;
                 case "git":
-                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = RepositoryType.Git; }
+                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = "git"; }
 
                     break;
                 case "mercurial":
-                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = RepositoryType.Mercurial; }
+                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = "mercurial"; }
 
                     break;
                 case "svn":
-                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = RepositoryType.Svn; }
+                    if (!(string.IsNullOrEmpty(Type))) { newRepository.Type = "svn"; }
 
                     break;
             }
